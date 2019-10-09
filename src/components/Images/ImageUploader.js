@@ -1,8 +1,13 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { postImages } from '../../actions/imageActions'
+
 
 class ImageUploader extends Component {
 
-  handleOnSubmit(imageInfo) {
+  handleSubmit(imageInfo) {
+    let newImage = { id: 1, imageURL:imageInfo.secure_url }
+    this.props.postImages(newImage)
     console.log('Done! Here is the image info: ', imageInfo)
   }
 
@@ -12,7 +17,7 @@ class ImageUploader extends Component {
       uploadPreset: "eytnlidt"},
       (error, result) => {
         if (!error && result && result.event === "success") {
-          this.handleOnSubmit(result.info)
+          this.handleSubmit(result.info)
         }
       }
     )
@@ -32,4 +37,12 @@ class ImageUploader extends Component {
   }
 }
 
-export default ImageUploader;
+const mapDispatchToProps = state => {
+  return {
+    images: state.images,
+    loading: state.loading
+  }
+}
+
+// export default ImageUploader;
+export default connect(mapDispatchToProps, { postImages })(ImageUploader)

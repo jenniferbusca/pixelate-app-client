@@ -2,7 +2,7 @@ import React from 'react';
 
 class ImageList extends React.Component {
   listImages = () => {
-    return this.props.images.map( image => 
+    return this.props.images.map( image =>
       <img
         className='thumbnail'
         key={image.id}
