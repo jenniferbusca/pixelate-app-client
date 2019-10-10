@@ -15,7 +15,7 @@ const imagesReducer = (state = { images: [], loading: false }, action) => {
     case 'UPLOAD_IMAGES':
       return {
         ...state,
-        images: action.images,
+        images: [...state.images, action.image],
         loading: false
       }
     default:

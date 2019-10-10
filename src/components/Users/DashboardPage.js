@@ -33,11 +33,4 @@ class DashboardPage extends Component {
   }
 }
 
-const mapDispatchToProps = state => {
-  return {
-    images: state.images,
-    loading: state.loading
-  }
-}
-
-export default connect(mapDispatchToProps, { fetchImages })(DashboardPage)
+export default connect(state => ({ images: state.images }), { fetchImages })(DashboardPage);

@@ -5,14 +5,13 @@ export const fetchImages = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_IMAGES'})
     fetch(baseURL + imageURL)
-      .then(response => {
-        return response.json()})
+      .then(response => { return response.json()})
       .then(responseJSON => {
       dispatch({
         type: 'DISPLAY_IMAGES',
         images: responseJSON.data.map(
           image => (
-            { id:image.id, url:image.attributes.image_url}
+            { id:image.id, image_url:image.attributes.image_url}
           ))
         }
       )
