@@ -36,21 +36,4 @@ class ImageUploader extends Component {
   }
 }
 
-// const mapStateToProps = state => {
-//   return {
-//     images: state.images,
-//     loading: state.loading
-//   }
-// }
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     postImages: () => {
-//       dispatch(postImages())
-//     }
-//   };
-// };
-
-// export default ImageUploader;
-// export default connect(mapDispatchToProps, { postImages })(ImageUploader)
 export default connect(state => ({ images: state.images }), { postImages })(ImageUploader);

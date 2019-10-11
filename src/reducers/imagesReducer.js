@@ -1,4 +1,7 @@
-const imagesReducer = (state = { images: [], loading: false }, action) => {
+const imagesReducer = (state = {
+  images: [],
+  loading: false
+}, action) => {
   switch(action.type) {
     case 'LOADING_IMAGES':
       return {
@@ -12,7 +15,7 @@ const imagesReducer = (state = { images: [], loading: false }, action) => {
         images: action.images,
         loading: false
       }
-    case 'UPLOAD_IMAGES':
+    case 'CREATE_IMAGES':
       return {
         ...state,
         images: [...state.images, action.image],

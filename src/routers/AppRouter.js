@@ -1,7 +1,8 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from '../components/Header';
-import DashboardPage from '../components/Users/DashboardPage';
+import ImagesContainer from '../components/Images/ImagesContainer';
+import LoginForm from '../components/Users/LoginForm';
 import UserAccountPage from '../components/Users/UserAccountPage';
 import NotFoundPage from '../components/NotFoundPage';
 
@@ -10,7 +11,8 @@ const AppRouter = () => (
     <div>
       <Header />
       <Switch>
-        <Route path="/" component={DashboardPage} exact={true}/>
+        <Route path="/" component={LoginForm} exact={true}/>
+        <Route path="/images" component={ImagesContainer} />
         <Route path="/account" component={UserAccountPage} />
         <Route component={NotFoundPage} />
       </Switch>

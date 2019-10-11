@@ -1,10 +1,10 @@
 const baseURL = 'http://localhost:3000'
-const imageURL = '/images'
+const imagesURL = '/images'
 
 export const fetchImages = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_IMAGES'})
-    fetch(baseURL + imageURL)
+    fetch(baseURL + imagesURL)
       .then(response => { return response.json()})
       .then(responseJSON => {
       dispatch({
@@ -21,7 +21,7 @@ export const fetchImages = () => {
 
 export const postImages = (image) => {
   return (dispatch) => {
-    fetch(baseURL + imageURL, {
+    fetch(baseURL + imagesURL, {
       method: "POST",
       headers: {
         'Accept': 'application/json',
@@ -34,7 +34,7 @@ export const postImages = (image) => {
       .then(response => response.json())
       .then(image => {
         dispatch({
-          type: 'UPLOAD_IMAGES',
+          type: 'CREATE_IMAGES',
           image
         })
       })

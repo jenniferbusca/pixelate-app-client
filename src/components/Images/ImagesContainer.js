@@ -2,10 +2,9 @@ import React, { Component } from 'react';
 import ImageUploader from '../Images/ImageUploader'
 import { connect } from 'react-redux';
 import { fetchImages } from '../../actions/imageActions'
-import ImageList from '../Images/ImageList'
+import ImageList from './ImageList'
 
-
-class DashboardPage extends Component {
+class ImagesContainer extends Component {
 
   componentDidMount() {
     this.props.fetchImages()
@@ -33,4 +32,4 @@ class DashboardPage extends Component {
   }
 }
 
-export default connect(state => ({ images: state.images }), { fetchImages })(DashboardPage);
+export default connect(state => ({ images: state.images }), { fetchImages })(ImagesContainer);
