@@ -1,6 +1,7 @@
 const baseURL = 'http://localhost:3000'
 const imagesURL = '/images'
 
+//image action creators
 export const fetchImages = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_IMAGES'})

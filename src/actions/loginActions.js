@@ -1,8 +1,7 @@
 const baseURL = 'http://localhost:3000'
 const usersURL = '/users'
 
-export const login = (email, password, history) => {
-  let user = { email: email, password: password}
+export const login = (user, history) => {
   return (dispatch) => {
     fetch(baseURL + usersURL , {
       mode: 'cors',
@@ -21,9 +20,9 @@ export const login = (email, password, history) => {
           type: 'GET_USER',
           user
         })
+        return user
       })
-      .then(history.push('/images'))
+      .then(user => history.push(`/images/${user.id}`))
       .catch(error => console.log(error))
-
   };
 };

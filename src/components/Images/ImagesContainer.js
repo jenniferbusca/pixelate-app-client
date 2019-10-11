@@ -32,5 +32,11 @@ class ImagesContainer extends Component {
   }
 }
 
-//inline mapStateToProps, mapDispatchToProps
-export default connect(state => ({ images: state.images }), { fetchImages })(ImagesContainer);
+
+//inline (mapStateToProps, mapDispatchToProps
+export default connect(
+  state => ({
+    images: state.imagesReducer.images,
+    user: state.loginReducer.user
+  }),
+{ fetchImages })(ImagesContainer);

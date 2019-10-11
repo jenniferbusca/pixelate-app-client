@@ -36,4 +36,6 @@ class ImageUploader extends Component {
   }
 }
 
-export default connect(state => ({ images: state.images }), { postImages })(ImageUploader);
+export default connect(
+  state => ({ images: state.imagesReducer.images 
+}), { postImages })(ImageUploader);

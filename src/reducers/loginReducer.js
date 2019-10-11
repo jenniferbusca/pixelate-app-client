@@ -1,14 +1,11 @@
 const loginReducer = (state = {
-  user = {
-    email: this.state.email,
-    password: this.state.password
-  }
+  user: {}
 }, action) => {
   switch(action.type) {
     case 'GET_USER':
       return {
         ...state,
-        user
+        user: action.user
       }
     default:
       return state;

@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withRouter } from "react-router-dom"
 import { connect } from 'react-redux';
 import { login } from '../../actions/loginActions'
 
@@ -8,14 +7,16 @@ class LoginForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
-      password: ''
+      user: {
+        email: '',
+        password: ''
+      }
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state.email, this.state.password, this.props.history);
+    this.props.login(this.state.user, this.props.history);
   }
 
   render() {
@@ -24,12 +25,22 @@ class LoginForm extends Component {
         <div className="form-group-collection">
           <div className="form-group">
             <label>Email:</label>
-            <input type="email" name="email" onChange={e => this.setState({email: e.target.value})} value={this.state.email}/>
+            <input
+              type="email"
+              name="email"
+              onChange={e => this.setState({
+                user: { ...this.state.user, email: e.target.value} })}
+              value={this.state.email}/>
           </div>
 
           <div className="form-group">
             <label>Password:</label>
-            <input type="password" name="password" onChange={e => this.setState({password: e.target.value})} value={this.state.password}/>
+            <input
+              type="password"
+              name="password"
+              onChange={e => this.setState({
+                user: { ...this.state.user, password: e.target.value} })}
+              value={this.state.password}/>
           </div>
         </div>
 
@@ -39,4 +50,7 @@ class LoginForm extends Component {
   }
 }
 
-export default connect(state => ({ email: state.email, password: state.password }), { login })(withRouter(LoginForm));
+export default connect(
+  state => ({
+    user: state.loginReducer.user
+  }), { login })(LoginForm);
