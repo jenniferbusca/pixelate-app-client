@@ -1,25 +1,29 @@
 const baseURL = 'http://localhost:3000'
-const userURL = '/users'
+const usersURL = '/users'
 
-export const login = (email, password) => {
+export const login = (email, password, history) => {
+  let user = { email: email, password: password}
   return (dispatch) => {
-    // fetch(baseURL + imageURL, {
-    //   method: "POST",
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json',
-    //   },
-    //   body: JSON.stringify({
-    //     image: image
-    //   })
-    // })
-    //   .then(response => response.json())
-    //   .then(image => {
-    //     dispatch({
-    //       type: 'CREATE_IMAGES',
-    //       image
-    //     })
-    //   })
-    //   .catch(error => console.log(error))
+    fetch(baseURL + usersURL , {
+      mode: 'cors',
+      method: "POST",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        user
+      })
+    })
+      .then(response => response.json())
+      .then(user => {
+        dispatch({
+          type: 'GET_USER',
+          user
+        })
+      })
+      .then(history.push('/images'))
+      .catch(error => console.log(error))
+
   };
-}
+};

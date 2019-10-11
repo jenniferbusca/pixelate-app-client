@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { withRouter } from "react-router-dom"
 import { connect } from 'react-redux';
 import { login } from '../../actions/loginActions'
 
@@ -14,7 +15,7 @@ class LoginForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state.email, this.state.password);
+    this.props.login(this.state.email, this.state.password, this.props.history);
   }
 
   render() {
@@ -38,4 +39,4 @@ class LoginForm extends Component {
   }
 }
 
-export default connect(state => ({ email: state.email, password: state.password }), { login })(LoginForm);
+export default connect(state => ({ email: state.email, password: state.password }), { login })(withRouter(LoginForm));

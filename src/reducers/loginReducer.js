@@ -1,6 +1,8 @@
 const loginReducer = (state = {
-  email: this.state.email,
-  password: this.state.password
+  user = {
+    email: this.state.email,
+    password: this.state.password
+  }
 }, action) => {
   switch(action.type) {
     case 'GET_USER':
