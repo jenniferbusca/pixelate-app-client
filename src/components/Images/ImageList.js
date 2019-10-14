@@ -1,14 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ImageList = (props) => (
   props.images.map(image =>
-      <img
-        className='thumbnail'
-        key={image.id}
-        src={image.image_url}
-        alt={image.id}
-      />
-    )
+    <div key={image.id}>
+      <Link to="/images/edit">
+        <img
+          className='thumbnail'
+          src={image.image_url}
+          alt={image.id}
+        />
+      </Link>
+    </div>
+  )
 )
 
 export default ImageList
