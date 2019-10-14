@@ -7,7 +7,7 @@ import ImageList from './ImageList'
 class ImagesContainer extends Component {
 
   componentDidMount() {
-    this.props.fetchImages()
+    this.props.fetchImages(this.props.user)
   }
 
   handleLoading = () => {
@@ -31,7 +31,6 @@ class ImagesContainer extends Component {
     )
   }
 }
-
 
 //inline (mapStateToProps, mapDispatchToProps
 export default connect(

@@ -16,10 +16,23 @@ class LoginForm extends Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state.user, this.props.history);
+    let user = this.state.user
+    this.props.login(user, this.props.history);
+  }
+
+  handleErrors = (errors) => {
+    if(errors) {
+      return(
+        <ul className="errors">
+          {Object.entries(errors).map((k, v) =>
+            <li key={k}>{k}:{v}</li>)}
+        </ul>
+      )
+    }
   }
 
   render() {
+    let errors = this.props.user.user
     return (
       <form name="loginForm" onSubmit={(event) => this.handleSubmit(event)}>
         <div className="form-group-collection">
@@ -43,8 +56,10 @@ class LoginForm extends Component {
               value={this.state.password}/>
           </div>
         </div>
-
         <input type="submit" value="Login" />
+        <div>
+          { errors && <div>this.handleErrors(errors)</div>}
+        </div>
       </form>
     )
   }

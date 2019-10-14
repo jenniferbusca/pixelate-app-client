@@ -1,16 +1,17 @@
 const baseURL = 'http://localhost:3000'
 const imagesURL = '/images'
+const usersURL = '/users'
 
 //image action creators
-export const fetchImages = () => {
+export const fetchImages = (user) => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_IMAGES'})
-    fetch(baseURL + imagesURL)
+    fetch(`${baseURL + usersURL}/${user.id}`)
       .then(response => { return response.json()})
       .then(responseJSON => {
       dispatch({
         type: 'DISPLAY_IMAGES',
-        images: responseJSON.data.map(
+        images: responseJSON.included.map(
           image => (
             { id:image.id, image_url:image.attributes.image_url}
           ))

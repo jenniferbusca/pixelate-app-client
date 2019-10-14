@@ -22,7 +22,15 @@ export const login = (user, history) => {
         })
         return user
       })
-      .then(user => history.push(`/images/${user.id}`))
-      .catch(error => console.log(error))
+      .then(user => {
+        if(user.result === undefined) {
+          history.push(`/images/${user.id}`)
+        } else {
+          dispatch({
+            type: 'LOGIN_ERROR',
+            user: user.user
+          })
+        }
+      })
   };
 };

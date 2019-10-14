@@ -1,8 +1,13 @@
 const loginReducer = (state = {
-  user: {}
+  user: {},
 }, action) => {
   switch(action.type) {
     case 'GET_USER':
+      return {
+        ...state,
+        user: action.user,
+      }
+    case 'LOGIN_ERROR':
       return {
         ...state,
         user: action.user

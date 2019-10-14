@@ -6,7 +6,7 @@ import { postImages } from '../../actions/imageActions'
 class ImageUploader extends Component {
 
   handleSubmit(imageInfo) {
-    let newImage = { id: 1, image_url:imageInfo.secure_url }
+    let newImage = { user_id: this.props.user.id, image_url:imageInfo.secure_url }
     this.props.postImages(newImage)
   }
 
@@ -37,5 +37,7 @@ class ImageUploader extends Component {
 }
 
 export default connect(
-  state => ({ images: state.imagesReducer.images 
+  state => ({
+    images: state.imagesReducer.images,
+    user: state.loginReducer.user
 }), { postImages })(ImageUploader);
