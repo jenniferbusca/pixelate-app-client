@@ -6,7 +6,6 @@
     "cloudinary-react": "^1.2.1",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "react-native": "^0.61.2",
     "react-redux": "^7.1.1",
     "react-router-dom": "^5.1.2",
     "redux": "^4.0.4",
