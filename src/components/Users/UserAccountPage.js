@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ImageUploadPage = () => (
+const UserAccountPage = () => (
   <div>
-    <h1>Upload An Image</h1>
+    <h1>User Account</h1>
   </div>
 );
 
-export default ImageUploadPage;
+export default UserAccountPage;

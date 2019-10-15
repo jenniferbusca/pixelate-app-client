@@ -33,6 +33,7 @@ class LoginForm extends Component {
 
   render() {
     let errors = this.props.user.user
+    console.log(this.props.user);
     return (
       <form name="loginForm" onSubmit={(event) => this.handleSubmit(event)}>
         <div className="form-group-collection">
@@ -58,7 +59,7 @@ class LoginForm extends Component {
         </div>
         <input type="submit" value="Login" />
         <div>
-          { errors && <div>this.handleErrors(errors)</div>}
+          <div>{errors ? this.handleErrors(errors) : 'nothing'}</div>
         </div>
       </form>
     )

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ImageList = (props) => (
   props.images.map(image =>
     <div key={image.id}>
-      <Link to="/images/edit">
+      <Link to={`/image/${image.id}`}>
         <img
           className='thumbnail'
           src={image.image_url}

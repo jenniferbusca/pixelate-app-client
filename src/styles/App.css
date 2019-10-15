@@ -24,3 +24,7 @@
 .thumbnail {
   height: 150px;
 }
+
+.largeImage {
+  max-height: 500px;
+}

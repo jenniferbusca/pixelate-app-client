@@ -29,7 +29,7 @@ class ImageUploader extends Component {
           id="upload-widget"
           className="cloudinary-button"
           onClick={this.showWidget}>
-          Upload files
+          Upload Images
         </button>
       </div>
     )

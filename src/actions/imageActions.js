@@ -43,3 +43,39 @@ export const postImages = (image) => {
       .catch(error => console.log(error))
   };
 }
+
+// export const removeImage = (imageId) => {
+//   return (dispatch) => {
+//     dispatch({ type: 'REMOVE_IMAGE'})
+//     fetch(`${baseURL + imagesURL}/${imageId}`)
+//       .then(response => { return response.json()})
+//       .then(responseJSON => {
+//         console.log(responseJSON)
+//     })
+//   }
+// }
+export const removeImage = (imageId) => {
+  return (dispatch) => {
+    dispatch({ type: 'REMOVE_IMAGE'})
+    fetch(`${baseURL + imagesURL}/${imageId}`, {
+      method: "DELETE",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        imageId
+      })
+    })
+      .then(response => console.log(response.json()))
+      // .then(this.fetchImages())
+      // .then(images => {
+        // console.log(images)
+        // dispatch({
+        //   type: 'CREATE_IMAGES',
+        //   image
+        // })
+      // })
+      // .catch(error => console.log(error))
+  };
+}
