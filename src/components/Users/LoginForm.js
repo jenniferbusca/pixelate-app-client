@@ -10,30 +10,27 @@ class LoginForm extends Component {
       user: {
         email: '',
         password: ''
-      }
+      },
+      error: ""
     };
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    let user = this.state.user
-    this.props.login(user, this.props.history);
+    this.props.login(this.state.user, this.props.history);
+    this.setState({error: this.props.error });
   }
 
   handleErrors = (errors) => {
-    if(errors) {
-      return(
-        <ul className="errors">
-          {Object.entries(errors).map((k, v) =>
-            <li key={k}>{k}:{v}</li>)}
-        </ul>
-      )
-    }
+    return(
+      <ul className="errors">
+        {Object.entries(errors).map((k, v) =>
+          <li key={k}>{k}</li>)}
+      </ul>
+    )
   }
 
   render() {
-    let errors = this.props.user.user
-    console.log(this.props.user);
     return (
       <form name="loginForm" onSubmit={(event) => this.handleSubmit(event)}>
         <div className="form-group-collection">
@@ -58,9 +55,7 @@ class LoginForm extends Component {
           </div>
         </div>
         <input type="submit" value="Login" />
-        <div>
-          <div>{errors ? this.handleErrors(errors) : 'nothing'}</div>
-        </div>
+         <div>{this.state.error ? this.handleErrors(this.props.error) : null }</div>
       </form>
     )
   }
@@ -68,5 +63,6 @@ class LoginForm extends Component {
 
 export default connect(
   state => ({
-    user: state.loginReducer.user
+    user: state.loginReducer.user,
+    error: state.loginReducer.error
   }), { login })(LoginForm);

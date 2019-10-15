@@ -15,6 +15,12 @@ const imagesReducer = (state = {
         images: action.images,
         loading: false
       }
+    case 'CREATE_IMAGES':
+      return {
+        ...state,
+        images: [...state.images, action.image],
+        loading: false
+      }
     case 'REMOVE_IMAGE':
       const images = state.images.filter(image => image.id !== action.id);
       return {

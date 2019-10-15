@@ -28,7 +28,7 @@ export const login = (user, history) => {
         } else {
           dispatch({
             type: 'LOGIN_ERROR',
-            user: user.user
+            error: user.user
           })
         }
       })
