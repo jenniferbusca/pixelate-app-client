@@ -2,7 +2,6 @@ const baseURL = 'http://localhost:3000'
 const imagesURL = '/images'
 const usersURL = '/users'
 
-//image action creators
 export const fetchImages = (user) => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_IMAGES'})
@@ -44,17 +43,7 @@ export const postImages = (image) => {
   };
 }
 
-// export const removeImage = (imageId) => {
-//   return (dispatch) => {
-//     dispatch({ type: 'REMOVE_IMAGE'})
-//     fetch(`${baseURL + imagesURL}/${imageId}`)
-//       .then(response => { return response.json()})
-//       .then(responseJSON => {
-//         console.log(responseJSON)
-//     })
-//   }
-// }
-export const removeImage = (imageId) => {
+export const removeImage = (imageId, userId, history) => {
   return (dispatch) => {
     dispatch({ type: 'REMOVE_IMAGE'})
     fetch(`${baseURL + imagesURL}/${imageId}`, {
@@ -67,15 +56,6 @@ export const removeImage = (imageId) => {
         imageId
       })
     })
-      .then(response => console.log(response.json()))
-      // .then(this.fetchImages())
-      // .then(images => {
-        // console.log(images)
-        // dispatch({
-        //   type: 'CREATE_IMAGES',
-        //   image
-        // })
-      // })
-      // .catch(error => console.log(error))
+    .then(window.location.reload(history.push(`/images/${userId}`)))
   };
 }

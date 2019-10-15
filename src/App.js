@@ -15,7 +15,7 @@ const App = () => {
           <Header />
           <Switch>
             <Route path="/" component={LoginForm} exact={true}/>
-            <Route path="/images" component={ImagesContainer} />
+            <Route path="/images/:user_id" component={ImagesContainer} />
             <Route path="/image/:id" component={ImagePage} />
             <Route component={NotFoundPage} />
           </Switch>

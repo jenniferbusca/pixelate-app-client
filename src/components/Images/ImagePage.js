@@ -11,11 +11,11 @@ class ImagePage extends Component {
   };
 
   handleRemove = () => {
-    this.props.removeImage(this.props.match.params.id)
+    this.props.removeImage(this.props.match.params.id, this.props.user.id, this.props.history)
   }
 
   render() {
-    let image = this.props.images.filter(image => image.id === this.state.imageId)
+    let image = this.props.images.filter(image => image.id.toString() === this.state.imageId)
     return (
       <div>
         <img
@@ -29,9 +29,6 @@ class ImagePage extends Component {
     );
   }
 };
-
-
-
 
 export default connect(
   state => ({
