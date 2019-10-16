@@ -26,5 +26,6 @@
 }
 
 .largeImage {
-  max-height: 500px;
+  max-width: 80%;
+  height: auto;
 }
