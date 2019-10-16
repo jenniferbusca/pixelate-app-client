@@ -18,6 +18,7 @@ class ImagePage extends Component {
     let image = this.props.images.filter(image => image.id.toString() === this.state.imageId)
     return (
       <div>
+        <canvas ref="canvas" width={640} height={425} />
         <img
           className='largeImage'
           key={image[0].id}
