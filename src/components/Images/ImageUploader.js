@@ -6,7 +6,7 @@ import { postImages } from '../../actions/imageActions'
 class ImageUploader extends Component {
 
   handleSubmit(imageInfo) {
-    let newImage = { user_id: this.props.user.id, image_url:imageInfo.secure_url }
+    let newImage = { user_id: this.props.user.id, image_url:imageInfo.public_id }
     this.props.postImages(newImage)
   }
 
