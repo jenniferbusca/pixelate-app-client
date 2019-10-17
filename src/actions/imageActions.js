@@ -12,7 +12,7 @@ export const fetchImages = (user) => {
         type: 'DISPLAY_IMAGES',
         images: responseJSON.included.map(
           image => (
-            { id:image.id, image_url:image.attributes.image_url}
+            { id:image.id, image_url:image.attributes.image_url, transformations:image.attributes.transformations}
           ))
         }
       )

@@ -21,7 +21,7 @@ const imagesReducer = (state = {
         images: [...state.images, action.image],
         loading: false
       }
-    case 'UPDATE_IMAGE':			
+    case 'UPDATE_IMAGE':
       return {
         ...state,
         images: state.images.map(

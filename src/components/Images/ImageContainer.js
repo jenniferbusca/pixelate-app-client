@@ -7,15 +7,15 @@ import ImageFilters from './ImageFilters';
 class ImageContainer extends Component {
   constructor(props) {
     super(props);
+    this.queryImageState = props.images.find(image => image.id === this.props.match.params.id)
     this.state = {
-      image: props.images.find(image => image.id === this.props.match.params.id),
-      selectedImageFilter: null
+      image: this.queryImageState,
+      selectedImageFilter: this.queryImageState.transformations
     };
   };
 
   handleSave = () => {
     this.props.saveImage(this.state.image, this.state.selectedImageFilter)
-    debugger
   }
 
   handleRemove = () => {
@@ -31,7 +31,7 @@ class ImageContainer extends Component {
     return (
       <div>
         <ShowImage image={this.state.image} selectedImageFilter={this.state.selectedImageFilter} />
-        <ImageFilters handleFilterChange={this.handleFilterChange} />
+        <ImageFilters handleFilterChange={this.handleFilterChange} selectedImageFilter={this.state.selectedImageFilter}/>
         <button onClick={handleSave => this.handleSave()}>Save Image</button>
         <button onClick={handleRemove => this.handleRemove()}>Remove Image</button>
       </div>

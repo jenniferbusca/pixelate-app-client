@@ -15,9 +15,13 @@ const filterOptions = {
 const ImageFilters = (props) => {
   return (
     <div>
-      <select onChange={props.handleFilterChange}>
-        {Object.keys(filterOptions).map((k) =>
-          <option key={k} value={filterOptions[k]}>{k}</option>)}
+      <select value={props.selectedImageFilter} onChange={props.handleFilterChange}>
+        {
+          Object.keys(filterOptions).map(
+          (k) =>
+          <option key={k} value={filterOptions[k]}>{k}</option>
+          )
+        }
       </select>
     </div>
   );
