@@ -21,13 +21,14 @@ const imagesReducer = (state = {
         images: [...state.images, action.image],
         loading: false
       }
-    // case 'UPDATE_IMAGE':
-    //   const image = state.images.filter(image => image.id === action.id);
-    //   return {
-    //     ...state,
-    //     image: [...state.images, action.image],
-    //     loading: false
-    //   }
+    case 'UPDATE_IMAGE':			
+      return {
+        ...state,
+        images: state.images.map(
+          image =>
+            image.id === action.image.id ? action.image : image
+        )
+      }
     case 'REMOVE_IMAGE':
       const images = state.images.filter(image => image.id !== action.id);
       return {

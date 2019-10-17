@@ -59,3 +59,28 @@ export const removeImage = (imageId, userId, history) => {
     .then(window.location.reload(history.push(`/images/${userId}`)))
   };
 }
+
+
+export const saveImage = (image, transformation) => {
+  return (dispatch) => {
+    fetch(`${baseURL + imagesURL}/${image.id}`, {
+      method: "PUT",
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        image,
+        transformation
+      })
+    })
+      .then(response => response.json())
+      .then(image =>
+        dispatch({
+          type: 'UPDATE_IMAGE',
+          image
+        })
+      )
+      .catch(error => console.log(error))
+  };
+}

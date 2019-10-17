@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { removeImage } from '../../actions/imageActions';
+import { saveImage, removeImage } from '../../actions/imageActions';
 import ShowImage from './ShowImage';
 import ImageFilters from './ImageFilters';
 
@@ -8,17 +8,18 @@ class ImageContainer extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      imageId: this.props.match.params.id,
+      image: props.images.find(image => image.id === this.props.match.params.id),
       selectedImageFilter: null
     };
   };
 
   handleSave = () => {
-    this.props.saveImage(this.state.imageId, this.state.selectedImageFilter)
+    this.props.saveImage(this.state.image, this.state.selectedImageFilter)
+    debugger
   }
 
   handleRemove = () => {
-    this.props.removeImage(this.props.match.params.id, this.props.user.id, this.props.history)
+    this.props.removeImage(this.state.image.id, this.props.user.id, this.props.history)
   }
 
   handleFilterChange = (e) => {
@@ -27,10 +28,9 @@ class ImageContainer extends Component {
   }
 
   render() {
-    let image = this.props.images.filter(image => image.id.toString() === this.state.imageId)[0]
     return (
       <div>
-        <ShowImage image={image} selectedImageFilter={this.state.selectedImageFilter} />
+        <ShowImage image={this.state.image} selectedImageFilter={this.state.selectedImageFilter} />
         <ImageFilters handleFilterChange={this.handleFilterChange} />
         <button onClick={handleSave => this.handleSave()}>Save Image</button>
         <button onClick={handleRemove => this.handleRemove()}>Remove Image</button>
@@ -44,4 +44,4 @@ export default connect(
     images: state.imagesReducer.images,
     user: state.loginReducer.user
   }),
-  { removeImage })(ImageContainer);
+  { saveImage, removeImage })(ImageContainer);
