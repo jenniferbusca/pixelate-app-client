@@ -7,10 +7,11 @@ import ImageFilters from './ImageFilters';
 class ImageContainer extends Component {
   constructor(props) {
     super(props);
-    this.queryImageState = props.images.find(image => image.id === this.props.match.params.id)
+    this.queryImageState = props.images.find(image => image.id.toString() === this.props.match.params.id)
+    this.imageTransformations = this.queryImageState.transformations
     this.state = {
       image: this.queryImageState,
-      selectedImageFilter: this.queryImageState.transformations
+      selectedImageFilter: this.imageTransformations
     };
   };
 

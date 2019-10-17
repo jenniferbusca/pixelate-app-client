@@ -1,6 +1,10 @@
 const baseURL = 'http://localhost:3000'
 const imagesURL = '/images'
 const usersURL = '/users'
+const headers =  {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      }
 
 export const fetchImages = (user) => {
   return (dispatch) => {
@@ -24,10 +28,7 @@ export const postImages = (image) => {
   return (dispatch) => {
     fetch(baseURL + imagesURL, {
       method: "POST",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
+      headers: headers,
       body: JSON.stringify({
         image: image
       })
@@ -48,10 +49,7 @@ export const removeImage = (imageId, userId, history) => {
     dispatch({ type: 'REMOVE_IMAGE'})
     fetch(`${baseURL + imagesURL}/${imageId}`, {
       method: "DELETE",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
+      headers: headers,
       body: JSON.stringify({
         imageId
       })
@@ -65,10 +63,7 @@ export const saveImage = (image, transformation) => {
   return (dispatch) => {
     fetch(`${baseURL + imagesURL}/${image.id}`, {
       method: "PUT",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
+      headers: headers,
       body: JSON.stringify({
         image,
         transformation
