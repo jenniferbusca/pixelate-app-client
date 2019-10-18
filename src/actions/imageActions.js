@@ -1,4 +1,4 @@
-const baseURL = 'http://localhost:3000'
+const baseURL = 'https://pixelate-app.herokuapp.com/'
 const imagesURL = '/images'
 const usersURL = '/users'
 const headers =  {

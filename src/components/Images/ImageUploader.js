@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom'
 import { postImages } from '../../actions/imageActions'
 
 
@@ -24,14 +25,12 @@ class ImageUploader extends Component {
 
   render() {
     return (
-      <div>
-        <button
-          className="nav-button"
-          id="upload-widget"
-          onClick={this.showWidget}>
-          UPLOAD IMAGES
-        </button>
-      </div>
+      <button
+        className="nav-button"
+        id="upload-widget"
+        onClick={() => this.showWidget()}>
+        UPLOAD IMAGES
+      </button>
     )
   }
 }
@@ -40,4 +39,4 @@ export default connect(
   state => ({
     images: state.imagesReducer.images,
     user: state.loginReducer.user
-}), { postImages })(ImageUploader);
+}), { postImages })(withRouter(ImageUploader));

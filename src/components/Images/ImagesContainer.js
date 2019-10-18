@@ -26,7 +26,7 @@ class ImagesContainer extends Component {
    handleImage = () => {
      if(!this.props.currentImage) {
        return (
-         this.props.images === [] ? <ImageUploader /> : <p>Click on an image to edit.</p>
+        <p>Upload or click on an image to begin.</p>
        )
      } else {
        return (

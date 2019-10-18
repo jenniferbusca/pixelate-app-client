@@ -18,21 +18,18 @@ const filterOptions = {
   "Sharpen": "sharpen:300",
   "Tilt Shift": "tilt_shift:20",
   "Vignette": "vignette:10"
-
 }
 
 const ImageFilters = (props) => {
   return (
-    <div>
-      <select value={props.selectedImageFilter || "none"} onChange={props.handleFilterChange}>
-        {
-          Object.keys(filterOptions).map(
-          (k) =>
-          <option key={k} value={filterOptions[k]}>{k}</option>
-          )
-        }
-      </select>
-    </div>
+    <select value={props.selectedImageFilter || "none"} onChange={props.handleFilterChange}>
+      {
+        Object.keys(filterOptions).map(
+        (k) =>
+        <option key={k} value={filterOptions[k]}>{k}</option>
+        )
+      }
+    </select>
   );
 };
 

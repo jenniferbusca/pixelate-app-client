@@ -2,6 +2,7 @@ import React from 'react';
 import { Image, Transformation, CloudinaryContext}  from 'cloudinary-react';
 
 const ShowImage = (props) => {
+  console.log(props)
   return (
     <div key={props.image.id}>
       <CloudinaryContext cloudName="df8jfhyew">

@@ -15,6 +15,7 @@ class ImageContainer extends Component {
   };
 
   componentDidMount() {
+    console.log(this.props.currentImage.transformations)
     this.setSelectedImageFilter(this.props.currentImage.transformations);
   }
 
