@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { saveImage, removeImage } from '../../actions/imageActions';
 import ShowImage from './ShowImage';
 import ImageFilters from './ImageFilters';
-import { CardImg, Col, Row, Container, Card,Button, CardHeader, CardBody, CardTitle, CardText} from 'reactstrap';
+import { CardImg, CardGroup, Col, Row, Container, Card,Button, CardHeader, CardBody, CardText} from 'reactstrap';
 
 class ImageContainer extends Component {
   constructor(props) {
@@ -45,11 +45,12 @@ class ImageContainer extends Component {
     const { currentImage } = this.props;
     return (
       <Container>
+
+      <CardGroup>
         <Card>
-          <CardImg top width="100%" className="col-auto" />
-            <ShowImage image={currentImage} selectedImageFilter={this.state.selectedImageFilter} />
-          <Row>
-            <Col sm="6" className="col-auto">
+          <ShowImage image={currentImage} selectedImageFilter={this.state.selectedImageFilter} />
+        </Card>
+        <Col md="4">
             <Card>
               <CardHeader>FILTER EFFECTS</CardHeader>
               <CardBody>
@@ -59,9 +60,6 @@ class ImageContainer extends Component {
                 <Button onClick={handleSave => this.handleSave()}>Save Changes</Button>
               </CardBody>
             </Card>
-          </Col>
-            <Col sm="6" className="col-auto">
-
             <Card>
               <CardHeader>DELETE IMAGE</CardHeader>
               <CardBody>
@@ -72,9 +70,7 @@ class ImageContainer extends Component {
               </CardBody>
             </Card>
           </Col>
-          </Row>
-        </Card>
-
+        </CardGroup>
 
       </Container>
     );
