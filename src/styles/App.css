@@ -28,6 +28,7 @@
 .largeImage {
   max-width: 100%;
   height: auto;
+  border: 1px;
 }
 
 .login-form {
@@ -44,4 +45,17 @@
   border: none;
   color: #D3D3D3;
   font-family: 'Varela Round', sans-serif;
+}
+
+.img-list {
+  background: #D3D3D3;
+  padding: 10px;
+}
+
+.selected-image {
+  padding: 10px;
+}
+
+.images-container {
+  background: #edf1f2;
 }

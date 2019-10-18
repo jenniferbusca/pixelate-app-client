@@ -58,7 +58,7 @@ export const removeImage = (imageId, userId, history) => {
   };
 }
 
-export const saveImage = (image, transformation, history) => {
+export const saveImage = (image, transformation) => {
   return (dispatch) => {
     fetch(`${baseURL + imagesURL}/${image.id}`, {
       method: "PUT",

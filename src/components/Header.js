@@ -6,12 +6,10 @@ import Navigation from './Navigation'
 
 const Header = (props) => {
   return (
-    <div>
-      <Navbar className="App-header" light expand="md">
-        <NavbarBrand href="/"><img src={logo} className="App-logo" alt="logo" /></NavbarBrand>
-          {props.history.location.pathname  === "/" ? undefined : <Navigation />}
-      </Navbar>
-    </div>
+    <Navbar className="App-header" light expand="md">
+      <NavbarBrand href="/"><img src={logo} className="App-logo" alt="logo" /></NavbarBrand>
+        {props.history.location.pathname  === "/" ? undefined : <Navigation />}
+    </Navbar>
   );
 }
 

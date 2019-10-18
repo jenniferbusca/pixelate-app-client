@@ -1,15 +1,24 @@
 import React from 'react';
 
 const filterOptions = {
-  no_effect: "none",
-  contrast: "contrast:100",
-  blur: "blur:100",
-  pixelate: "pixelate:30",
-  auto_brightness: "auto_brightness",
-  auto_saturation: "auto_saturation",
-  sepia: "sepia:80",
-  vignette: "vignette:20",
-  black_white: "blackwhite"
+  "No Effect": "none",
+  "Auto Brightness": "auto_brightness",
+  "Auto Saturation": "auto_saturation",
+  "Black & White": "blackwhite",
+  "Blur": "blur:100",
+  "Cartoonify": "cartoonify",
+  "Contrast: Light": "contrast:50",
+  "Contrast: Heavy": "contrast:100",
+  "Grayscale": "grayscale",
+  "Oil Paint": "oil_paint:75",
+  "Ombre": "gradient_fade:20",
+  "Pixelate: Light": "pixelate:10",
+  "Pixelate: Heavy": "pixelate:30",
+  "Sepia": "sepia:80",
+  "Sharpen": "sharpen:300",
+  "Tilt Shift": "tilt_shift:20",
+  "Vignette": "vignette:10"
+
 }
 
 const ImageFilters = (props) => {

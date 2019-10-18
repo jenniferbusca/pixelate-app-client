@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { saveImage, removeImage } from '../../actions/imageActions';
 import ShowImage from './ShowImage';
 import ImageFilters from './ImageFilters';
-import { CardImg, CardGroup, Col, Row, Container, Card,Button, CardHeader, CardBody, CardText} from 'reactstrap';
+import { CardGroup, Col, Card,Button, CardHeader, CardBody, CardText} from 'reactstrap';
 
 class ImageContainer extends Component {
   constructor(props) {
@@ -25,7 +25,7 @@ class ImageContainer extends Component {
   }
 
   handleSave = () => {
-    this.props.saveImage(this.props.currentImage, this.state.selectedImageFilter, this.props.history)
+    this.props.saveImage(this.props.currentImage, this.state.selectedImageFilter)
   }
 
   handleRemove = () => {
@@ -44,8 +44,6 @@ class ImageContainer extends Component {
   render() {
     const { currentImage } = this.props;
     return (
-      <Container>
-
       <CardGroup>
         <Card>
           <ShowImage image={currentImage} selectedImageFilter={this.state.selectedImageFilter} />
@@ -71,8 +69,6 @@ class ImageContainer extends Component {
             </Card>
           </Col>
         </CardGroup>
-
-      </Container>
     );
   }
 };

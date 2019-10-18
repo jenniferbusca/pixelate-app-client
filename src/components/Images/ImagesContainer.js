@@ -4,7 +4,7 @@ import { fetchImages } from '../../actions/imageActions'
 import ImageList from './ImageList'
 import ImageContainer from './ImageContainer'
 import ImageUploader from './ImageUploader'
-import { CardImg, Col, Row, Container, Card,Button, CardHeader, CardBody, CardText} from 'reactstrap';
+import { Row, Col} from 'reactstrap';
 
 class ImagesContainer extends Component {
   componentDidMount() {
@@ -37,16 +37,14 @@ class ImagesContainer extends Component {
 
   render() {
     return (
-      <Container>
-        <Row>
-          <Col className="col-md-2">
-            {this.handleLoadingImages()}
-          </Col>
-          <Col className="col-md-10">
-            {this.handleImage()}
-          </Col>
-        </Row>
-      </Container>
+      <Row className="images-container">
+        <Col md="2" className="img-list">
+          {this.handleLoadingImages()}
+        </Col>
+        <Col md="10" className="selected-image">
+          {this.handleImage()}
+        </Col>
+      </Row>
     )
   }
 }
