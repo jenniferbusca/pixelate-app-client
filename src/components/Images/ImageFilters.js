@@ -15,7 +15,6 @@ const filterOptions = {
 const ImageFilters = (props) => {
   return (
     <div>
-      FILTERS:
       <select value={props.selectedImageFilter || "none"} onChange={props.handleFilterChange}>
         {
           Object.keys(filterOptions).map(

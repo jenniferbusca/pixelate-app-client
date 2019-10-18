@@ -4,7 +4,7 @@ import { withRouter } from 'react-router-dom';
 import { saveImage, removeImage } from '../../actions/imageActions';
 import ShowImage from './ShowImage';
 import ImageFilters from './ImageFilters';
-import { Card,Button, CardColumns} from 'reactstrap';
+import { CardImg, Col, Row, Container, Card,Button, CardHeader, CardBody, CardTitle, CardText} from 'reactstrap';
 
 class ImageContainer extends Component {
   constructor(props) {
@@ -25,8 +25,6 @@ class ImageContainer extends Component {
   }
 
   handleSave = () => {
-    console.log(this.props.currentImage)
-    console.log(this.state.selectedImageFilter)
     this.props.saveImage(this.props.currentImage, this.state.selectedImageFilter, this.props.history)
   }
 
@@ -46,19 +44,39 @@ class ImageContainer extends Component {
   render() {
     const { currentImage } = this.props;
     return (
-      <CardColumns>
+      <Container>
         <Card>
-          <ShowImage image={currentImage} selectedImageFilter={this.state.selectedImageFilter} />
+          <CardImg top width="100%" className="col-auto" />
+            <ShowImage image={currentImage} selectedImageFilter={this.state.selectedImageFilter} />
+          <Row>
+            <Col sm="6" className="col-auto">
+            <Card>
+              <CardHeader>FILTER EFFECTS</CardHeader>
+              <CardBody>
+                <CardText>
+                  <ImageFilters handleFilterChange={this.handleFilterChange} selectedImageFilter={this.state.selectedImageFilter}/>
+                </CardText>
+                <Button onClick={handleSave => this.handleSave()}>Save Changes</Button>
+              </CardBody>
+            </Card>
+          </Col>
+            <Col sm="6" className="col-auto">
+
+            <Card>
+              <CardHeader>DELETE IMAGE</CardHeader>
+              <CardBody>
+                <CardText>
+                  No longer want this image?
+                </CardText>
+                <Button onClick={handleRemove => this.handleRemove()}>Delete Image</Button>
+              </CardBody>
+            </Card>
+          </Col>
+          </Row>
         </Card>
-        <Card>
-          <ImageFilters handleFilterChange={this.handleFilterChange} selectedImageFilter={this.state.selectedImageFilter}/>
-          <Button onClick={handleSave => this.handleSave()}>Save Changes</Button>
-        </Card>
-        <Card>
-          <label>Options:</label>
-          <Button onClick={handleRemove => this.handleRemove()}>Delete Image</Button>
-        </Card>
-      </CardColumns>
+
+
+      </Container>
     );
   }
 };

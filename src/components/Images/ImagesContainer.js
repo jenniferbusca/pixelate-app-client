@@ -50,7 +50,6 @@ class ImagesContainer extends Component {
   }
 }
 
-//inline (mapStateToProps, mapDispatchToProps)
 export default connect(
   state => ({
     images: state.imagesReducer.images,

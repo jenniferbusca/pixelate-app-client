@@ -22,9 +22,7 @@ const imagesReducer = (state = {
         images: [...state.images, action.image],
         loading: false
       }
-
     case 'UPDATE_IMAGE':
-    console.log(action.image.data)
       return {
           ...state,
           images: state.images.map(image => image.id === action.image.data.id ?
