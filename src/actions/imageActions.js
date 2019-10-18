@@ -59,7 +59,7 @@ export const removeImage = (imageId, userId, history) => {
 }
 
 
-export const saveImage = (image, transformation) => {
+export const saveImage = (image, transformation, history) => {
   return (dispatch) => {
     fetch(`${baseURL + imagesURL}/${image.id}`, {
       method: "PUT",
@@ -76,7 +76,7 @@ export const saveImage = (image, transformation) => {
           image
         })
       )
-      .catch(error => console.log(error))
+      // .then(window.location.reload(history.push(`/images/${image.user_id}`)))
   };
 }
 

@@ -22,14 +22,16 @@ const imagesReducer = (state = {
         images: [...state.images, action.image],
         loading: false
       }
+
     case 'UPDATE_IMAGE':
+    console.log(action.image.data)
       return {
-        ...state,
-        images: state.images.map(
-          image =>
-            image.id === action.image.id ? action.image : image
-        )
-      }
+          ...state,
+          images: state.images.map(image => image.id === action.image.data.id ?
+            { ...image, transformations: action.image.data.attributes.transformations } :
+            image
+          )
+      };
     case 'REMOVE_IMAGE':
       const images = state.images.filter(image => image.id !== action.id);
       return {

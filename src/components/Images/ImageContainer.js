@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from 'react-router-dom';
 import { saveImage, removeImage } from '../../actions/imageActions';
 import ShowImage from './ShowImage';
 import ImageFilters from './ImageFilters';
+import { Card,Button, CardColumns} from 'reactstrap';
 
 class ImageContainer extends Component {
   constructor(props) {
@@ -23,11 +25,13 @@ class ImageContainer extends Component {
   }
 
   handleSave = () => {
-    this.props.saveImage(this.props.currentImage, this.state.selectedImageFilter)
+    console.log(this.props.currentImage)
+    console.log(this.state.selectedImageFilter)
+    this.props.saveImage(this.props.currentImage, this.state.selectedImageFilter, this.props.history)
   }
 
   handleRemove = () => {
-    this.props.removeImage(this.props.currentImage.id, this.props.user.id, this.props.history)
+    this.props.removeImage(this.props.currentImage.id, this.props.currentImage.user_id, this.props.history)
   }
 
   setSelectedImageFilter = (selectedImageFilter) => {
@@ -42,12 +46,19 @@ class ImageContainer extends Component {
   render() {
     const { currentImage } = this.props;
     return (
-      <div>
-        <ShowImage image={currentImage} selectedImageFilter={this.state.selectedImageFilter} />
-        <ImageFilters handleFilterChange={this.handleFilterChange} selectedImageFilter={currentImage.transformations}/>
-        <button onClick={handleSave => this.handleSave()}>Save Image</button>
-        <button onClick={handleRemove => this.handleRemove()}>Remove Image</button>
-      </div>
+      <CardColumns>
+        <Card>
+          <ShowImage image={currentImage} selectedImageFilter={this.state.selectedImageFilter} />
+        </Card>
+        <Card>
+          <ImageFilters handleFilterChange={this.handleFilterChange} selectedImageFilter={this.state.selectedImageFilter}/>
+          <Button onClick={handleSave => this.handleSave()}>Save Changes</Button>
+        </Card>
+        <Card>
+          <label>Options:</label>
+          <Button onClick={handleRemove => this.handleRemove()}>Delete Image</Button>
+        </Card>
+      </CardColumns>
     );
   }
 };
@@ -55,7 +66,6 @@ class ImageContainer extends Component {
 export default connect(
   state => ({
     images: state.imagesReducer.images,
-    user: state.loginReducer.user,
     currentImage: state.imagesReducer.currentImage
   }),
-  { saveImage, removeImage })(ImageContainer);
+  { saveImage, removeImage })(withRouter(ImageContainer));

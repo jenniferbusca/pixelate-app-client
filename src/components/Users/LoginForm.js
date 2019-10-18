@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { login } from '../../actions/loginActions'
+import { Alert, Container, Row, Col, Button, Form, FormGroup, Card, CardBody } from 'reactstrap';
 
 class LoginForm extends Component {
 
@@ -32,42 +33,44 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <div className="card row">
-        <div className="card-body col-md-12 ">
-          <form name="loginForm" onSubmit={(event) => this.handleSubmit(event)}>
+      <Container>
+        <Row>
+          <Col>
+            {this.state.error ? <Alert color="secondary">{this.handleErrors(this.props.error)}</Alert> : null }
+            <Card className="login-form">
+              <CardBody>
+                <Form name="loginForm" onSubmit={(event) => this.handleSubmit(event)}>
+                  <FormGroup>
+                    <label>Email</label>
+                    <input
+                      className="form-control"
+                      placeholder="Enter email to login or sign-up"
+                      type="email"
+                      name="email"
+                      onChange={e => this.setState({
+                        user: { ...this.state.user, email: e.target.value} })}
+                      value={this.state.email}/>
+                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+                  </FormGroup>
 
-              <div className="form-group">
-                <label>Email</label>
-                <input
-                  className="form-control"
-                  placeholder="Enter Email"
-                  type="email"
-                  name="email"
-                  onChange={e => this.setState({
-                    user: { ...this.state.user, email: e.target.value} })}
-                  value={this.state.email}/>
-                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
-              </div>
-
-              <div className="form-group">
-                <label>Password</label>
-                <input
-                  className="form-control"
-                  placeholder="Password"
-                  type="password"
-                  name="password"
-                  onChange={e => this.setState({
-                    user: { ...this.state.user, password: e.target.value} })}
-                  value={this.state.password}/>
-              </div>
-             <button type="submit" className="btn btn-primary">Submit</button>
-
-             <div>{this.state.error ? this.handleErrors(this.props.error) : null }</div>
-
-           </form>
-         </div>
-       </div>
-
+                  <FormGroup>
+                    <label>Password</label>
+                    <input
+                      className="form-control"
+                      placeholder="Password"
+                      type="password"
+                      name="password"
+                      onChange={e => this.setState({
+                        user: { ...this.state.user, password: e.target.value} })}
+                      value={this.state.password}/>
+                  </FormGroup>
+                 <Button type="submit" className="btn btn-primary">Submit</Button>
+               </Form>
+             </CardBody>
+           </Card>
+         </Col>
+       </Row>
+    </Container>
     )
   }
 }

@@ -26,10 +26,10 @@ class ImageUploader extends Component {
     return (
       <div>
         <button
+          className="nav-button"
           id="upload-widget"
-          className="cloudinary-button"
           onClick={this.showWidget}>
-          Upload Images
+          UPLOAD IMAGES
         </button>
       </div>
     )

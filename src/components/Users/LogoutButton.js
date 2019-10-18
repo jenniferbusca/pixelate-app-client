@@ -14,15 +14,16 @@ class LogoutButton extends Component {
   render() {
     return (
       <button
+        className="nav-button"
         onClick={(e) => this.handleSubmit(e)}>
-        Log out
+        LOG OUT
       </button>
     )
   }
 }
 
 export default connect(
-state => ({
-  user: state.loginReducer.user,
-  error: state.loginReducer.error
-}), { logout })(withRouter(LogoutButton));
+  state => ({
+    user: state.loginReducer.user,
+    error: state.loginReducer.error
+  }), { logout })(withRouter(LogoutButton));

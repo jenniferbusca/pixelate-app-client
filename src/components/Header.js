@@ -1,19 +1,18 @@
 import React from 'react';
-import { NavLink, Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import logo from '../pixel_logo.png';
-import ImageUploader from './Images/ImageUploader'
-import LogoutButton from './Users/LogoutButton'
-
+import { Navbar, NavbarBrand } from 'reactstrap';
+import Navigation from './Navigation'
 
 const Header = (props) => {
   return (
-    <header className="App-header">
-      <Link to="/"><img src={logo} className="App-logo" alt="logo" /></Link>
-      <NavLink to="/images/{id}">Images </NavLink>
-      <NavLink to={props.history.location.pathname}>{<ImageUploader />}</NavLink>
-      <NavLink to="/">{props.history.location.pathname  === "/" ? undefined : <LogoutButton />}</NavLink>
-    </header>
-  )
-};
+    <div>
+      <Navbar className="App-header" light expand="md">
+        <NavbarBrand href="/"><img src={logo} className="App-logo" alt="logo" /></NavbarBrand>
+          {props.history.location.pathname  === "/" ? undefined : <Navigation />}
+      </Navbar>
+    </div>
+  );
+}
 
 export default withRouter(Header);

@@ -11,6 +11,7 @@ import thunk from 'redux-thunk';
 import imagesReducer from './reducers/imagesReducer';
 import loginReducer from './reducers/loginReducer';
 import * as serviceWorker from './serviceWorker';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 const appReducer = combineReducers({
   imagesReducer,

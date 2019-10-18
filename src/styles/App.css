@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+
 .App {
   /* text-align: center; */
 }
@@ -11,7 +13,7 @@
   min-height: 20vh;
   display: flex;
   flex-direction: column;
-  font-size: calc(10px + 2vmin);
+  font-size: 16px;
   color: white;
 }
 
@@ -24,11 +26,22 @@
 }
 
 .largeImage {
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
 }
 
-.card {
-  width: 75%;
+.login-form {
+  margin: 5% 20%;
+  width: 60%;
+}
 
+.button {
+  font-family: 'Varela Round', sans-serif;
+}
+
+.nav-button {
+  background-color: transparent;
+  border: none;
+  color: #D3D3D3;
+  font-family: 'Varela Round', sans-serif;
 }
