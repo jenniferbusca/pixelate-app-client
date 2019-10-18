@@ -13,12 +13,14 @@ const App = () => {
       <BrowserRouter>
         <div>
           <Header />
-          <Switch>
-            <Route path="/" component={LoginForm} exact={true}/>
-            <Route path="/images/:user_id" component={ImagesContainer} />
-            <Route path="/image/:id" component={ImageContainer} />
-            <Route component={NotFoundPage} />
-          </Switch>
+          <div className="container">
+            <Switch>
+              <Route path="/" component={LoginForm} exact={true}/>
+              <Route path="/images/:user_id" component={ImagesContainer} />
+              <Route path="/image/:id" component={ImageContainer} />
+              <Route component={NotFoundPage} />
+            </Switch>
+          </div>
         </div>
       </BrowserRouter>
     </div>

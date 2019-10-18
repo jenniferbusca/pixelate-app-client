@@ -32,31 +32,42 @@ class LoginForm extends Component {
 
   render() {
     return (
-      <form name="loginForm" onSubmit={(event) => this.handleSubmit(event)}>
-        <div className="form-group-collection">
-          <div className="form-group">
-            <label>Email:</label>
-            <input
-              type="email"
-              name="email"
-              onChange={e => this.setState({
-                user: { ...this.state.user, email: e.target.value} })}
-              value={this.state.email}/>
-          </div>
+      <div className="card row">
+        <div className="card-body col-md-12 ">
+          <form name="loginForm" onSubmit={(event) => this.handleSubmit(event)}>
 
-          <div className="form-group">
-            <label>Password:</label>
-            <input
-              type="password"
-              name="password"
-              onChange={e => this.setState({
-                user: { ...this.state.user, password: e.target.value} })}
-              value={this.state.password}/>
-          </div>
-        </div>
-        <input type="submit" value="Login" />
-         <div>{this.state.error ? this.handleErrors(this.props.error) : null }</div>
-      </form>
+              <div className="form-group">
+                <label>Email</label>
+                <input
+                  className="form-control"
+                  placeholder="Enter Email"
+                  type="email"
+                  name="email"
+                  onChange={e => this.setState({
+                    user: { ...this.state.user, email: e.target.value} })}
+                  value={this.state.email}/>
+                <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
+              </div>
+
+              <div className="form-group">
+                <label>Password</label>
+                <input
+                  className="form-control"
+                  placeholder="Password"
+                  type="password"
+                  name="password"
+                  onChange={e => this.setState({
+                    user: { ...this.state.user, password: e.target.value} })}
+                  value={this.state.password}/>
+              </div>
+             <button type="submit" className="btn btn-primary">Submit</button>
+
+             <div>{this.state.error ? this.handleErrors(this.props.error) : null }</div>
+
+           </form>
+         </div>
+       </div>
+
     )
   }
 }

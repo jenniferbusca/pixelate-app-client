@@ -1,6 +1,7 @@
 const imagesReducer = (state = {
   images: [],
-  loading: false
+  loading: false,
+  currentImage: ""
 }, action) => {
   switch(action.type) {
     case 'LOADING_IMAGES':
@@ -35,6 +36,11 @@ const imagesReducer = (state = {
         ...state,
         images,
         loading: false
+      }
+    case 'CURRENT_IMAGE':
+      return {
+        ...state,
+        currentImage: action.image
       }
     default:
       return state;

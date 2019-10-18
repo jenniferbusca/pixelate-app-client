@@ -79,3 +79,12 @@ export const saveImage = (image, transformation) => {
       .catch(error => console.log(error))
   };
 }
+
+export const currentImage = (image) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'CURRENT_IMAGE',
+      image
+    })
+  };
+}

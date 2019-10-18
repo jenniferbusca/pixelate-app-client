@@ -7,32 +7,44 @@ import ImageFilters from './ImageFilters';
 class ImageContainer extends Component {
   constructor(props) {
     super(props);
-    this.queryImageState = props.images.find(image => image.id.toString() === this.props.match.params.id)
-    this.imageTransformations = this.queryImageState.transformations
     this.state = {
-      image: this.queryImageState,
-      selectedImageFilter: this.imageTransformations
+      selectedImageFilter: null
     };
   };
 
+  componentDidMount() {
+    this.setSelectedImageFilter(this.props.currentImage.transformations);
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.currentImage.id !== this.props.currentImage.id) {
+      this.setSelectedImageFilter(this.props.currentImage.transformations);
+    }
+  }
+
   handleSave = () => {
-    this.props.saveImage(this.state.image, this.state.selectedImageFilter)
+    this.props.saveImage(this.props.currentImage, this.state.selectedImageFilter)
   }
 
   handleRemove = () => {
-    this.props.removeImage(this.state.image.id, this.props.user.id, this.props.history)
+    this.props.removeImage(this.props.currentImage.id, this.props.user.id, this.props.history)
+  }
+
+  setSelectedImageFilter = (selectedImageFilter) => {
+    this.setState({ selectedImageFilter });
   }
 
   handleFilterChange = (e) => {
-    const filter = e.target.value
-    this.setState({ selectedImageFilter: filter === "none" ? null : filter });
+    const filter = e.target.value === "none" ? null : e.target.value;
+    this.setSelectedImageFilter(filter);
   }
 
   render() {
+    const { currentImage } = this.props;
     return (
       <div>
-        <ShowImage image={this.state.image} selectedImageFilter={this.state.selectedImageFilter} />
-        <ImageFilters handleFilterChange={this.handleFilterChange} selectedImageFilter={this.state.selectedImageFilter}/>
+        <ShowImage image={currentImage} selectedImageFilter={this.state.selectedImageFilter} />
+        <ImageFilters handleFilterChange={this.handleFilterChange} selectedImageFilter={currentImage.transformations}/>
         <button onClick={handleSave => this.handleSave()}>Save Image</button>
         <button onClick={handleRemove => this.handleRemove()}>Remove Image</button>
       </div>
@@ -43,6 +55,7 @@ class ImageContainer extends Component {
 export default connect(
   state => ({
     images: state.imagesReducer.images,
-    user: state.loginReducer.user
+    user: state.loginReducer.user,
+    currentImage: state.imagesReducer.currentImage
   }),
   { saveImage, removeImage })(ImageContainer);

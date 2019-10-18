@@ -1,15 +1,16 @@
 const baseURL = 'http://localhost:3000'
 const usersURL = '/users'
+const headers = {
+  'Accept': 'application/json',
+  'Content-Type': 'application/json',
+}
 
 export const login = (user, history) => {
   return (dispatch) => {
     fetch(baseURL + usersURL , {
       mode: 'cors',
       method: "POST",
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
+      headers: headers,
       body: JSON.stringify({
         user
       })
@@ -24,6 +25,9 @@ export const login = (user, history) => {
       })
       .then(user => {
         if(user.result === undefined) {
+          dispatch({
+            type: 'LOGGED_IN',
+          })
           history.push(`/images/${user.id}`)
         } else {
           dispatch({
@@ -34,3 +38,11 @@ export const login = (user, history) => {
       })
   };
 };
+
+export const logout = (history) => {
+  return (dispatch) => {
+    dispatch({
+      type: 'LOG_OUT',
+    })
+  }
+}

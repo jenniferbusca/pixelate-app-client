@@ -1,21 +1,28 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import {Image, Transformation, CloudinaryContext} from 'cloudinary-react';
+import ImageContainer from './ImageContainer'
+import { currentImage } from '../../actions/imageActions'
 
-const ImageList = (props) => {
-  return (
-    props.images.map(image =>
-      <div key={image.id}>
-        <Link to={`/image/${image.id}`}>
-          <CloudinaryContext cloudName="df8jfhyew">
-            <Image className='thumbnail' publicId={image.image_url} >
-              <Transformation effect={image.transformations} />
-            </Image>
-          </CloudinaryContext>
-        </Link>
-      </div>
-    )
-  )
+class ImageList extends Component {
+  handleClick = (image) => {
+    this.props.currentImage(image)
+  }
+
+   render() {
+     return (
+       this.props.images.map(image =>
+         <div key={image.id}>
+             <CloudinaryContext cloudName="df8jfhyew" >
+               <Image className='img-thumbnail' publicId={image.image_url} onClick={() => this.handleClick(image)}>
+                 <Transformation effect={image.transformations} />
+               </Image>
+             </CloudinaryContext>
+         </div>
+       )
+     )
+   }
+
 }
 
-export default ImageList;
+export default connect( null ,{ currentImage })(ImageList);

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 const filterOptions = {
   no_effect: "none",
@@ -15,7 +15,7 @@ const filterOptions = {
 const ImageFilters = (props) => {
   return (
     <div>
-      <select value={props.selectedImageFilter} onChange={props.handleFilterChange}>
+      <select value={props.selectedImageFilter || "none"} onChange={props.handleFilterChange}>
         {
           Object.keys(filterOptions).map(
           (k) =>
