@@ -69,12 +69,20 @@ export const saveImage = (image, transformation) => {
       })
     })
     .then(response => response.json())
-    .then(image =>
-      dispatch({
-        type: 'UPDATE_IMAGE',
-        image
-      })
+    .then(image => {
+        dispatch({
+          type: 'UPDATE_IMAGE',
+          image
+        })
+        return image
+      }
     )
+    .then(({ data: { id, attributes: { transformations, image_url } } }) => {
+      dispatch({
+        type: 'CURRENT_IMAGE',
+        image: {id, transformations, image_url}
+      })
+    })
   };
 }
 

@@ -19,7 +19,8 @@ const imagesReducer = (state = {
     case 'CREATE_IMAGES':
       return {
         ...state,
-        images: [...state.images, action.image],
+        images: [action.image, ...state.images],
+        currentImage: action.image,
         loading: false
       }
     case 'UPDATE_IMAGE':

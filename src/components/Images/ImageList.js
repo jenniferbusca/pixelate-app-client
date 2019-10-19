@@ -11,7 +11,7 @@ class ImageList extends Component {
 
    render() {
      return (
-       this.props.images.map(image =>
+       this.props.images.sort((a,b) => a.id < b.id).map(image =>
          <div key={image.id} >
            <CloudinaryContext cloudName="df8jfhyew" >
              <Image className='img-thumbnail' publicId={image.image_url} onClick={() => this.handleClick(image)}>

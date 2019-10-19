@@ -15,7 +15,6 @@ class ImageContainer extends Component {
   };
 
   componentDidMount() {
-    console.log(this.props.currentImage.transformations, this.state.selectedImageFilter)
     this.setSelectedImageFilter(this.props.currentImage.transformations);
   }
 
@@ -46,7 +45,7 @@ class ImageContainer extends Component {
     const { currentImage } = this.props;
     return (
       <CardGroup>
-        <Card>
+        <Card className="card-img">
           <ShowImage image={currentImage} selectedImageFilter={this.state.selectedImageFilter} />
         </Card>
         <Col md="4">

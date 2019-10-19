@@ -37,11 +37,11 @@ class ImagesContainer extends Component {
 
   render() {
     return (
-      <Row className="images-container">
-        <Col md="2" className="img-list">
+      <Row className="container-fluid">
+        <Col className="img-list" sm={{ size: 2, offset: 1 }}>
           {this.handleLoadingImages()}
         </Col>
-        <Col md="10" className="selected-image">
+        <Col className="selected-image" sm={{ size: 9, offset: 0 }} >
           {this.handleImage()}
         </Col>
       </Row>
