@@ -5,12 +5,11 @@ import Header from './components/Header';
 import ImagesContainer from './components/Images/ImagesContainer';
 import LoginForm from './components/Users/LoginForm';
 import NotFoundPage from './components/NotFoundPage';
-import { Container } from 'reactstrap'
 
 const App = () => {
   return (
     <div className="App">
-      <BrowserRouter>
+      <BrowserRouter basename='/'>
         <Header />
         <Switch>
           <Route path="/" component={LoginForm} exact={true}/>

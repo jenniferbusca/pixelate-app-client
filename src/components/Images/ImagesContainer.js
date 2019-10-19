@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { fetchImages } from '../../actions/imageActions'
 import ImageList from './ImageList'
 import ImageContainer from './ImageContainer'
-import ImageUploader from './ImageUploader'
 import { Row, Col} from 'reactstrap';
 
 class ImagesContainer extends Component {
