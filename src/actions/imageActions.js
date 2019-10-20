@@ -54,8 +54,7 @@ export const removeImage = (imageId, userId, history) => {
         imageId
       })
     })
-    .then(window.location.reload(history.push(history.location.pathname)))
-    .then(image => {
+    .then( image => {
       dispatch({
         type: 'CURRENT_IMAGE',
         image: undefined
