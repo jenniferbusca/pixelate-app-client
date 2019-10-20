@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom'
 import { postImages } from '../../actions/imageActions'
 
-
 class ImageUploader extends Component {
 
   handleSubmit(imageInfo) {

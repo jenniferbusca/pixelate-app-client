@@ -8,7 +8,7 @@ const Navigation = (props) => {
   return (
     <Nav>
       <NavItem>
-        <NavLink to={props.history.location.pathname}>{<ImageUploader />}</NavLink>
+        <NavLink to={props.history.location.pathname} >{<ImageUploader />}</NavLink>
       </NavItem>
       <NavItem>
         <NavLink to="/">{<LogoutButton />}</NavLink>

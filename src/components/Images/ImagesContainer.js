@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchImages } from '../../actions/imageActions'
 import ImageList from './ImageList'
+import ImageUploader from './ImageUploader'
 import ImageContainer from './ImageContainer'
 import { Row, Col} from 'reactstrap';
 
@@ -26,7 +27,7 @@ class ImagesContainer extends Component {
    handleImage = () => {
      if(!this.props.currentImage) {
        return (
-        <p>Upload or click on an image to begin.</p>
+         <p><ImageUploader /> OR CLICK ON AN IMAGE TO BEGIN</p>
        )
      } else {
        return (

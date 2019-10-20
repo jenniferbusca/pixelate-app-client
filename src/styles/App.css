@@ -38,7 +38,7 @@
 .nav-button {
   background-color: transparent;
   border: none;
-  color: #D3D3D3;
+  color: #ababab;
   font-family: 'Varela Round', sans-serif;
 }
 
@@ -50,9 +50,8 @@
 }
 
 .selected-image {
-  padding: 10px;
-}
-
-.div.container-fluid.row {
-  padding: 0px;
+  padding: 10%;
+  text-align: center;
+  font-family: 'Varela Round', sans-serif;
+  color: gray;
 }

@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/pixelate-app-client/precache-manifest.6f84d3df46ab96305a84c66b474b5c03.js"
+  "/pixelate-app-client/precache-manifest.0fa0349b24a696919ce6338c6b3e5069.js"
 );
 
 self.addEventListener('message', (event) => {
