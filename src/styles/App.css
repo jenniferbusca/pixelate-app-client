@@ -2,7 +2,6 @@
 
 .App {
   background: #e8e8e8;
-  max-height: 100vh;
 }
 
 .container-fluid {
@@ -25,10 +24,6 @@
 
 .App-link {
   color: #09d3ac;
-}
-
-.img-thumbnail {
-  max-width: 20%;
 }
 
 .largeImage {
@@ -55,6 +50,7 @@
 .img-list {
   background: #b8b8b8;
   overflow-y: scroll;
+  max-height: 100vh;
 }
 
 .selected-image {
