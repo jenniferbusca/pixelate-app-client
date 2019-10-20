@@ -6,10 +6,10 @@ const headers =  {
         'Content-Type': 'application/json',
       }
 
-export const fetchImages = (user) => {
+export const fetchImages = (userId) => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_IMAGES'})
-    fetch(`${baseURL + usersURL}/${user.id}`)
+    fetch(`${baseURL + usersURL}/${userId}`)
       .then(response => { return response.json()})
       .then(responseJSON => {
       dispatch({
@@ -54,9 +54,9 @@ export const removeImage = (imageId, userId, history) => {
         imageId
       })
     })
-    .then( image => {
+    .then(image => {
       dispatch({
-        type: 'CURRENT_IMAGE',
+        type: 'GET_CURRENT_IMAGE',
         image: undefined
       })
     })
@@ -84,17 +84,17 @@ export const saveImage = (image, transformation) => {
     )
     .then(({ data: { id, attributes: { transformations, image_url } } }) => {
       dispatch({
-        type: 'CURRENT_IMAGE',
+        type: 'GET_CURRENT_IMAGE',
         image: {id, transformations, image_url}
       })
     })
   };
 }
 
-export const currentImage = (image) => {
+export const getCurrentImage = (image) => {
   return (dispatch) => {
     dispatch({
-      type: 'CURRENT_IMAGE',
+      type: 'GET_CURRENT_IMAGE',
       image
     })
   };

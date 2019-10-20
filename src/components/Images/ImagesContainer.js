@@ -6,8 +6,9 @@ import ImageContainer from './ImageContainer'
 import { Row, Col} from 'reactstrap';
 
 class ImagesContainer extends Component {
+
   componentDidMount() {
-    this.props.fetchImages(this.props.user)
+    this.props.fetchImages(this.props.user.id)
   }
 
   handleLoadingImages = () => {

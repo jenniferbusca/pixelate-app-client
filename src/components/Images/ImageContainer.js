@@ -49,26 +49,26 @@ class ImageContainer extends Component {
           <ShowImage image={currentImage} selectedImageFilter={this.state.selectedImageFilter} />
         </Card>
         <Col md="4">
-            <Card>
-              <CardHeader>FILTER EFFECTS</CardHeader>
-              <CardBody>
-                <CardText>
-                  <ImageFilters handleFilterChange={this.handleFilterChange} selectedImageFilter={this.state.selectedImageFilter}/>
-                </CardText>
-                <Button onClick={handleSave => this.handleSave()}>Save Changes</Button>
-              </CardBody>
-            </Card>
-            <Card>
-              <CardHeader>DELETE IMAGE</CardHeader>
-              <CardBody>
-                <CardText>
-                  No longer want this image?
-                </CardText>
-                <Button onClick={handleRemove => this.handleRemove()}>Delete Image</Button>
-              </CardBody>
-            </Card>
-          </Col>
-        </CardGroup>
+          <Card>
+            <CardHeader>FILTER EFFECTS</CardHeader>
+            <CardBody>
+              <CardText>
+                <ImageFilters handleFilterChange={this.handleFilterChange} selectedImageFilter={this.state.selectedImageFilter}/>
+              </CardText>
+              <Button onClick={handleSave => this.handleSave()}>Save Changes</Button>
+            </CardBody>
+          </Card>
+          <Card>
+            <CardHeader>DELETE IMAGE</CardHeader>
+            <CardBody>
+              <CardText>
+                No longer want this image?
+              </CardText>
+              <Button onClick={handleRemove => this.handleRemove()}>Delete Image</Button>
+            </CardBody>
+          </Card>
+        </Col>
+      </CardGroup>
     );
   }
 };

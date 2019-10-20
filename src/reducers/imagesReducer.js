@@ -38,7 +38,7 @@ const imagesReducer = (state = {
         images,
         loading: false
       }
-    case 'CURRENT_IMAGE':
+    case 'GET_CURRENT_IMAGE':
       return {
         ...state,
         currentImage: action.image
