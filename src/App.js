@@ -8,9 +8,10 @@ import NotFoundPage from './components/NotFoundPage';
 
 const App = () => {
   return (
-    <HashRouter basename='/'>
+    <HashRouter basename={process.env.PUBLIC_URL}>
+      {console.log(process.env.PUBLIC_URL + '/')}
       <div className="App">
-        <BrowserRouter basename='/'>
+        <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Header />
           <Switch>
             <Route path="/" component={LoginForm} exact={true}/>

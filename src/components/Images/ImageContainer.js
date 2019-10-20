@@ -29,6 +29,7 @@ class ImageContainer extends Component {
   }
 
   handleRemove = () => {
+    console.log(this.props.currentImage, this.props.history)
     this.props.removeImage(this.props.currentImage.id, this.props.currentImage.user_id, this.props.history)
   }
 
