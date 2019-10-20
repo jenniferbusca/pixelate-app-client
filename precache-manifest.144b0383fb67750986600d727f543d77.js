@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "65c202d2b5937d124820e776045b0241",
+    "revision": "cd95b40e83e18fa78dc560d9d26b8b93",
     "url": "/pixelate-app-client/index.html"
   },
   {
-    "revision": "b9fe2d8981bd536ad98c",
+    "revision": "ec2db0f26ab1f0c5e71e",
     "url": "/pixelate-app-client/static/css/2.0624914a.chunk.css"
   },
   {
-    "revision": "27f5e97dd57221124aeb",
-    "url": "/pixelate-app-client/static/css/main.266962d7.chunk.css"
+    "revision": "95275671f3e8e8f6bd1d",
+    "url": "/pixelate-app-client/static/css/main.6cd257ce.chunk.css"
   },
   {
-    "revision": "b9fe2d8981bd536ad98c",
-    "url": "/pixelate-app-client/static/js/2.ad719120.chunk.js"
+    "revision": "ec2db0f26ab1f0c5e71e",
+    "url": "/pixelate-app-client/static/js/2.e91c0e59.chunk.js"
   },
   {
-    "revision": "27f5e97dd57221124aeb",
-    "url": "/pixelate-app-client/static/js/main.64014b73.chunk.js"
+    "revision": "95275671f3e8e8f6bd1d",
+    "url": "/pixelate-app-client/static/js/main.61facf8a.chunk.js"
   },
   {
     "revision": "a92b9344a76d89671d3e",
