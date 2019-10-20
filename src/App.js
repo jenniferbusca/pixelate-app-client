@@ -4,7 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Header from './components/Header';
 import ImagesContainer from './components/Images/ImagesContainer';
 import LoginForm from './components/Users/LoginForm';
-import NotFoundPage from './components/NotFoundPage';
+import PageNotFound from './components/PageNotFound';
 
 const App = () => {
   return (
@@ -14,7 +14,7 @@ const App = () => {
         <Switch>
           <Route path="/" component={LoginForm} exact={true}/>
           <Route path="/images/:user_id" component={ImagesContainer} />
-          <Route component={NotFoundPage} />
+          <Route component={PageNotFound} />
         </Switch>
       </BrowserRouter>
     </div>
