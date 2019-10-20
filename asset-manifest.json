@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pixelate-app-client/static/css/main.5ecc7da5.chunk.css",
-    "main.js": "/pixelate-app-client/static/js/main.70417459.chunk.js",
-    "main.js.map": "/pixelate-app-client/static/js/main.70417459.chunk.js.map",
+    "main.js": "/pixelate-app-client/static/js/main.f8159f51.chunk.js",
+    "main.js.map": "/pixelate-app-client/static/js/main.f8159f51.chunk.js.map",
     "runtime-main.js": "/pixelate-app-client/static/js/runtime-main.0ebd8920.js",
     "runtime-main.js.map": "/pixelate-app-client/static/js/runtime-main.0ebd8920.js.map",
     "static/css/2.0624914a.chunk.css": "/pixelate-app-client/static/css/2.0624914a.chunk.css",
-    "static/js/2.e91c0e59.chunk.js": "/pixelate-app-client/static/js/2.e91c0e59.chunk.js",
-    "static/js/2.e91c0e59.chunk.js.map": "/pixelate-app-client/static/js/2.e91c0e59.chunk.js.map",
+    "static/js/2.4c6f585c.chunk.js": "/pixelate-app-client/static/js/2.4c6f585c.chunk.js",
+    "static/js/2.4c6f585c.chunk.js.map": "/pixelate-app-client/static/js/2.4c6f585c.chunk.js.map",
     "index.html": "/pixelate-app-client/index.html",
-    "precache-manifest.6f84d3df46ab96305a84c66b474b5c03.js": "/pixelate-app-client/precache-manifest.6f84d3df46ab96305a84c66b474b5c03.js",
+    "precache-manifest.0fa0349b24a696919ce6338c6b3e5069.js": "/pixelate-app-client/precache-manifest.0fa0349b24a696919ce6338c6b3e5069.js",
     "service-worker.js": "/pixelate-app-client/service-worker.js",
     "static/css/2.0624914a.chunk.css.map": "/pixelate-app-client/static/css/2.0624914a.chunk.css.map",
     "static/css/main.5ecc7da5.chunk.css.map": "/pixelate-app-client/static/css/main.5ecc7da5.chunk.css.map",
@@ -18,8 +18,8 @@
   "entrypoints": [
     "static/js/runtime-main.0ebd8920.js",
     "static/css/2.0624914a.chunk.css",
-    "static/js/2.e91c0e59.chunk.js",
+    "static/js/2.4c6f585c.chunk.js",
     "static/css/main.5ecc7da5.chunk.css",
-    "static/js/main.70417459.chunk.js"
+    "static/js/main.f8159f51.chunk.js"
   ]
 }
