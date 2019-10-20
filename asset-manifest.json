@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/pixelate-app-client/static/css/main.266962d7.chunk.css",
-    "main.js": "/pixelate-app-client/static/js/main.bdf2c013.chunk.js",
-    "main.js.map": "/pixelate-app-client/static/js/main.bdf2c013.chunk.js.map",
+    "main.js": "/pixelate-app-client/static/js/main.64014b73.chunk.js",
+    "main.js.map": "/pixelate-app-client/static/js/main.64014b73.chunk.js.map",
     "runtime-main.js": "/pixelate-app-client/static/js/runtime-main.0ebd8920.js",
     "runtime-main.js.map": "/pixelate-app-client/static/js/runtime-main.0ebd8920.js.map",
     "static/css/2.0624914a.chunk.css": "/pixelate-app-client/static/css/2.0624914a.chunk.css",
     "static/js/2.ad719120.chunk.js": "/pixelate-app-client/static/js/2.ad719120.chunk.js",
     "static/js/2.ad719120.chunk.js.map": "/pixelate-app-client/static/js/2.ad719120.chunk.js.map",
     "index.html": "/pixelate-app-client/index.html",
-    "precache-manifest.494558363238d96b313768b6662f3f7c.js": "/pixelate-app-client/precache-manifest.494558363238d96b313768b6662f3f7c.js",
+    "precache-manifest.d459a21796407a1c9b22280db08f4899.js": "/pixelate-app-client/precache-manifest.d459a21796407a1c9b22280db08f4899.js",
     "service-worker.js": "/pixelate-app-client/service-worker.js",
     "static/css/2.0624914a.chunk.css.map": "/pixelate-app-client/static/css/2.0624914a.chunk.css.map",
     "static/css/main.266962d7.chunk.css.map": "/pixelate-app-client/static/css/main.266962d7.chunk.css.map",
@@ -20,6 +20,6 @@
     "static/css/2.0624914a.chunk.css",
     "static/js/2.ad719120.chunk.js",
     "static/css/main.266962d7.chunk.css",
-    "static/js/main.bdf2c013.chunk.js"
+    "static/js/main.64014b73.chunk.js"
   ]
 }
