@@ -9,7 +9,6 @@ import NotFoundPage from './components/NotFoundPage';
 const App = () => {
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
-      {console.log(process.env.PUBLIC_URL + '/')}
       <div className="App">
         <BrowserRouter basename={process.env.PUBLIC_URL}>
           <Header />
