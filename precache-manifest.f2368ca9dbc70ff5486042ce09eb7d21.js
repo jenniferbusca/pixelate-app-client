@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cd95b40e83e18fa78dc560d9d26b8b93",
+    "revision": "c73fc83dc6f097e74c33a9fdfad33b29",
     "url": "/pixelate-app-client/index.html"
   },
   {
