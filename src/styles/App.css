@@ -50,6 +50,10 @@
 }
 
 .selected-image {
+  padding: 10px;
+}
+
+.selected-image p {
   padding: 10%;
   text-align: center;
   font-family: 'Varela Round', sans-serif;
