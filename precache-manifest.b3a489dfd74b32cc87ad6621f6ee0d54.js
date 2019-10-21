@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "e7f84fd9660e38cf5578210d0f6dc911",
+    "revision": "9335ade8ff60aced7c7fe4273bbbb913",
     "url": "/pixelate-app-client/index.html"
   },
   {
-    "revision": "f6e69d1437aab3c930cb",
+    "revision": "f217042f36dc1b5f042e",
     "url": "/pixelate-app-client/static/css/2.0624914a.chunk.css"
   },
   {
-    "revision": "1a587fe1e53283bc51cc",
-    "url": "/pixelate-app-client/static/css/main.42dd1302.chunk.css"
+    "revision": "023f7654f1b2a80b83a8",
+    "url": "/pixelate-app-client/static/css/main.0990f945.chunk.css"
   },
   {
-    "revision": "f6e69d1437aab3c930cb",
-    "url": "/pixelate-app-client/static/js/2.4c6f585c.chunk.js"
+    "revision": "f217042f36dc1b5f042e",
+    "url": "/pixelate-app-client/static/js/2.6bdae1cd.chunk.js"
   },
   {
-    "revision": "1a587fe1e53283bc51cc",
-    "url": "/pixelate-app-client/static/js/main.e862c6c8.chunk.js"
+    "revision": "023f7654f1b2a80b83a8",
+    "url": "/pixelate-app-client/static/js/main.6c2ea6d4.chunk.js"
   },
   {
     "revision": "a92b9344a76d89671d3e",
