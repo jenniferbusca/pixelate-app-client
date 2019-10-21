@@ -14,7 +14,7 @@ const App = () => {
         <Switch>
           <Route path="/" component={LoginForm} exact={true}/>
           <Route path="/images/:user_id" component={ImagesContainer} />
-          <Route component={PageNotFound} />
+          <Route path="*" component={PageNotFound} />
         </Switch>
       </BrowserRouter>
     </div>
