@@ -27,7 +27,10 @@ class ImagesContainer extends Component {
    handleImage = () => {
      if(!this.props.currentImage) {
        return (
-         <p><ImageUploader /> OR CLICK ON AN IMAGE TO BEGIN</p>
+         <div className="select-msg">
+           <p>UPLOAD OR CLICK ON AN IMAGE TO BEGIN</p>
+           <p><ImageUploader /></p>
+         </div>
        )
      } else {
        return (

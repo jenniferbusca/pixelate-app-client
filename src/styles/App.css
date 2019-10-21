@@ -36,9 +36,11 @@
 }
 
 .nav-button {
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 5px;
   border: none;
-  color: #ababab;
+  color: #ffffff;
   font-family: 'Varela Round', sans-serif;
 }
 
@@ -53,9 +55,14 @@
   padding: 10px;
 }
 
-.selected-image p {
-  padding: 10%;
+.select-msg {
+  padding: 10% 5%;
   text-align: center;
   font-family: 'Varela Round', sans-serif;
   color: gray;
+}
+
+.nav {
+  justify-content: space-between;
+  align-content: center;
 }
