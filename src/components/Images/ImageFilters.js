@@ -10,13 +10,12 @@ const filterOptions = {
   "Contrast: Light": "contrast:50",
   "Contrast: Heavy": "contrast:100",
   "Grayscale": "grayscale",
-  "Oil Paint": "oil_paint:75",
+  "Oil Paint": "oil_paint:80",
   "Ombre": "gradient_fade:20",
   "Pixelate: Light": "pixelate:10",
   "Pixelate: Heavy": "pixelate:30",
   "Sepia": "sepia:80",
   "Sharpen": "sharpen:300",
-  "Tilt Shift": "tilt_shift:20",
   "Vignette": "vignette:10"
 }
 

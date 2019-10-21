@@ -22,7 +22,7 @@ class ImageList extends Component {
        <div key={image.id} >
          <CloudinaryContext cloudName="df8jfhyew" >
            <Image className='img-thumbnail' publicId={image.image_url} onClick={() => this.handleClick(image)}>
-             <Transformation effect={image.transformations} />
+             <Transformation effect={image.transformations} width="200" height="150" crop="fit" />
            </Image>
          </CloudinaryContext>
        </div>
