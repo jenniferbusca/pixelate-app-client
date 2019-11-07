@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "923c9cb4f3fe71173bcc0a254d423ab3",
+    "revision": "193ca95259bc3e719e3389cd285fd444",
     "url": "/pixelate-app-client/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pixelate-app-client/static/css/2.0624914a.chunk.css"
   },
   {
-    "revision": "80b78dfe275543533608",
+    "revision": "04d801a691ae8d2d41f0",
     "url": "/pixelate-app-client/static/css/main.55d3f791.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/pixelate-app-client/static/js/2.6bdae1cd.chunk.js"
   },
   {
-    "revision": "80b78dfe275543533608",
-    "url": "/pixelate-app-client/static/js/main.5ac93042.chunk.js"
+    "revision": "04d801a691ae8d2d41f0",
+    "url": "/pixelate-app-client/static/js/main.cdafc741.chunk.js"
   },
   {
     "revision": "a92b9344a76d89671d3e",
