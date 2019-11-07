@@ -41,16 +41,20 @@ class LoginForm extends Component {
               <CardBody>
                 <Form name="loginForm" onSubmit={(event) => this.handleSubmit(event)}>
                   <FormGroup>
+                    <small id="emailHelp" className="form-text text-muted">
+                      <span>To use demo account, use the below login credentials:</span>
+                      <section>email: demo@gmail.com</section>
+                      <section>password: password</section>
+                    </small>
                     <label>Email</label>
                     <input
                       className="form-control"
-                      placeholder="Enter email to login or sign-up"
+                      placeholder="Enter email to login/sign-up"
                       type="email"
                       name="email"
                       onChange={e => this.setState({
                         user: { ...this.state.user, email: e.target.value} })}
                       value={this.state.email}/>
-                    <small id="emailHelp" className="form-text text-muted">We'll never share your email with anyone else.</small>
                   </FormGroup>
 
                   <FormGroup>

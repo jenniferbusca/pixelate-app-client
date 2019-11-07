@@ -6,7 +6,7 @@ import Navigation from './Navigation'
 
 const Header = (props) => {
   return (
-    <Nav className="App-header" light expand="md">
+    <Nav className="App-header" expand="md">
       <NavbarBrand><img src={logo} className="App-logo" alt="logo" /></NavbarBrand>
         {props.history.location.pathname  === "/" ? undefined : <Navigation />}
     </Nav>
